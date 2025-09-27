@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        run: |
+          git clone https://github.com/sdhrjsngh-gitops/simple-cicd-pipeline.git .
+
 
       - name: Build Stage
         run: echo "Build stage executed"
