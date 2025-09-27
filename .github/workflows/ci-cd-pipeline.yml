@@ -2,8 +2,8 @@ name: Simple CI/CD Pipeline
 
 on:
   push:
-     branches:
-         - main
+    branches:
+      - main
 
 jobs:
   build:
@@ -11,26 +11,28 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Build Stage
-        uses: echo "Build stage executed"
+        run: echo "Build stage executed"
 
   test:
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Test Stage
-        uses: echo "Test stage executed"
+        run: echo "Test stage executed"
   
   deploy:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - name: Deploy Stage
-        uses: echo "Deploy stage executed"
+        run: echo "Deploy stage executed"
 
   notify:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
       - name: Notify Stage
-        uses: echo "Notify stage executed"
+        run: echo "Notify stage executed"
+
